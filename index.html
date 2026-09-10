@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burgers & Co. — Hamburguesas que no se olvidan</title>
+  <meta name="description" content="Hamburguesas artesanales, ingredientes frescos y envío rápido. Pide en minutos por WhatsApp.">
+
+  <!-- Google Fonts: Anton para titulares con carácter, Work Sans para texto de cuerpo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#inicio" class="logo">Burgers<span>&</span>Co.</a>
+
+      <!-- Navegación con scroll suave (ver script.js) -->
+      <nav class="main-nav" id="mainNav">
+        <a href="#inicio" class="nav-link">Inicio</a>
+        <a href="#menu" class="nav-link">Menú</a>
+        <a href="#nosotros" class="nav-link">Nosotros</a>
+        <a href="#pedido" class="nav-link">Pedido</a>
+        <a href="#footer" class="nav-link">Contacto</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- Botón flotante de carrito: muestra cantidad de items agregados -->
+      <button class="cart-btn" id="cartBtn" aria-label="Ver pedido">
+        🛒 <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="inicio">
+      <div class="hero-overlay"></div>
+      <img
+        class="hero-img"
+        src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1600&q=80"
+        alt="Hamburguesa doble con queso, tocineta y vegetales frescos"
+        loading="eager"
+      >
+      <div class="hero-content">
+        <p class="hero-kicker">Directo a la parrilla, directo a tu mesa</p>
+        <h1 class="hero-title">
+          <span class="line-1">Hamburguesas que</span>
+          <span class="line-2">se comen con las manos</span>
+        </h1>
+        <p class="hero-sub">
+          Carne 100% de res, pan brioche horneado a diario y salsas propias.
+          Pide en línea y recíbela caliente en menos de 30 minutos.
+        </p>
+        <a href="#menu" class="btn btn-primary">Ver menú</a>
+      </div>
+    </section>
+
+    <!-- ============ MENÚ INTERACTIVO ============ -->
+    <section class="menu-section" id="menu">
+      <div class="section-inner">
+        <h2 class="section-title">Nuestro menú</h2>
+        <p class="section-lead">Elige tu categoría y arma tu pedido en segundos.</p>
+
+        <!-- Filtros de categoría: generados y controlados en script.js -->
+        <div class="filter-bar" id="filterBar">
+          <button class="filter-btn is-active" data-category="todas">Todas</button>
+          <button class="filter-btn" data-category="hamburguesas">Hamburguesas</button>
+          <button class="filter-btn" data-category="acompanamientos">Acompañamientos</button>
+          <button class="filter-btn" data-category="bebidas">Bebidas</button>
+        </div>
+
+        <!-- Las tarjetas de producto se inyectan dinámicamente desde script.js -->
+        <div class="menu-grid" id="menuGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ SOBRE NOSOTROS / BENEFICIOS ============ -->
+    <section class="about-section" id="nosotros">
+      <div class="section-inner">
+        <h2 class="section-title section-title--light">Por qué elegirnos</h2>
+
+        <div class="benefits-grid">
+          <article class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none"><path d="M24 4c-8 8-14 16-14 24a14 14 0 0 0 28 0c0-4-2-8-5-11 0 4-2 6-4 6 2-6-1-13-5-19Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Ingredientes frescos</h3>
+            <p>Compramos carne y vegetales cada mañana. Nada de congelados, nada de atajos.</p>
+          </article>
+
+          <article class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none"><path d="M6 30h20l6-10h10l-4 10h4l2 6H6z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><circle cx="14" cy="38" r="3" stroke="currentColor" stroke-width="2.5"/><circle cx="34" cy="38" r="3" stroke="currentColor" stroke-width="2.5"/></svg>
+            </div>
+            <h3>Envío rápido</h3>
+            <p>Tu pedido sale de la parrilla y llega a tu puerta en menos de 30 minutos.</p>
+          </article>
+
+          <article class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none"><path d="M10 20c0-8 6-14 14-14s14 6 14 14c0 10-14 22-14 22S10 30 10 20Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><circle cx="24" cy="20" r="4" stroke="currentColor" stroke-width="2.5"/></svg>
+            </div>
+            <h3>Sabor único</h3>
+            <p>Receta de salsa propia y punto de cocción que nadie más en la ciudad tiene.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PEDIDO POR WHATSAPP ============ -->
+    <section class="order-section" id="pedido">
+      <div class="section-inner order-inner">
+
+        <div class="order-summary">
+          <h2 class="section-title">Tu pedido</h2>
+          <p class="section-lead">Agrega productos desde el menú, revisa el total y confirma por WhatsApp.</p>
+
+          <!-- Lista dinámica del carrito -->
+          <ul class="order-list" id="orderList">
+            <li class="order-empty" id="orderEmpty">Todavía no has agregado productos.</li>
+          </ul>
+
+          <div class="order-total">
+            <span>Total</span>
+            <strong id="orderTotal">$0</strong>
+          </div>
+        </div>
+
+        <form class="order-form" id="orderForm">
+          <h3>Datos de entrega</h3>
+
+          <label for="customerName">Nombre completo</label>
+          <input type="text" id="customerName" name="customerName" placeholder="Ej. Samuel Ramírez" required>
+
+          <label for="customerAddress">Dirección de entrega</label>
+          <input type="text" id="customerAddress" name="customerAddress" placeholder="Ej. Cra 5 #12-34, Palmira" required>
+
+          <label for="customerNote">Nota adicional (opcional)</label>
+          <textarea id="customerNote" name="customerNote" rows="3" placeholder="Ej. Sin cebolla, tocar el timbre 2 veces"></textarea>
+
+          <button type="submit" class="btn btn-whatsapp" id="whatsappBtn">
+            Enviar pedido por WhatsApp
+          </button>
+          <p class="order-hint" id="orderHint">Agrega al menos un producto para poder enviar tu pedido.</p>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer" id="footer">
+    <div class="footer-inner">
+      <div class="footer-block">
+        <p class="logo footer-logo">Burgers<span>&</span>Co.</p>
+        <p>Hamburguesas artesanales hechas a la parrilla, todos los días.</p>
+      </div>
+
+      <div class="footer-block">
+        <h4>Horario de atención</h4>
+        <p>Lunes a jueves: 12:00 m. – 10:00 p. m.</p>
+        <p>Viernes a domingo: 12:00 m. – 12:00 a. m.</p>
+      </div>
+
+      <div class="footer-block">
+        <h4>Dirección</h4>
+        <p>Cra 28 #15-40, Palmira, Valle del Cauca</p>
+      </div>
+
+      <div class="footer-block">
+        <h4>Síguenos</h4>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="Facebook">Facebook</a>
+          <a href="#" aria-label="TikTok">TikTok</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="footer-copy">© 2026 Burgers & Co. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
